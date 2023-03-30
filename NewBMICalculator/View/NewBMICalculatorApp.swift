@@ -11,7 +11,7 @@ import SwiftUI
 struct NewBMICalculatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
