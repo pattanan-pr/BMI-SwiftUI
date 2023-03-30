@@ -99,7 +99,7 @@ struct MyBMICalculatorView: View {
     }
     //ฟังชันแปลค่า BMI เป็นคําอธิบาย
     private func bmiResultInterpretation(bmiValue : Double) -> String{
-        var bmi = String(format: "%.1f", bmiValue)
+        let bmi = String(format: "%.1f", bmiValue)
         var result : String = "BMI = \(bmi) \n"
         if bmiValue >= 40.0 {
             result += "You are extremely obese. Please see a doctor urgently."
