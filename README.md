@@ -14,6 +14,6 @@ Application will require the user to input their height and weight information, 
 
 
 
-![image](https://user-images.githubusercontent.com/78087419/228754578-431064c9-22bb-456b-b662-50b0cdd02970.png){ width: 200px; }
-![image](https://user-images.githubusercontent.com/78087419/228754655-69921a00-9c86-4957-b17f-f8ca1e217924.png)
-![image](https://user-images.githubusercontent.com/78087419/228754699-f72d05ea-34b9-4364-9b1c-cc5504478f66.png)
+<img width="255" alt="Screenshot 2566-03-30 at 13 37 36" src="https://user-images.githubusercontent.com/78087419/228755498-bced66e2-d139-4a6e-9672-847d54901c16.png">
+<img width="260" alt="Screenshot 2566-03-30 at 13 53 52" src="https://user-images.githubusercontent.com/78087419/228755589-b0541c23-acc0-4e79-bf70-42e871204bd9.png">
+<img width="259" alt="Screenshot 2566-03-30 at 13 54 44" src="https://user-images.githubusercontent.com/78087419/228755612-e982fc73-c33d-44d5-96b3-669802f345f7.png">
