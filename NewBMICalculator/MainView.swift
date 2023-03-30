@@ -40,6 +40,7 @@ struct MainView: View {
             }
             .navigationTitle("BMI Calculator")
             .navigationBarTitleDisplayMode(.large)
+           
         }
     }
 }

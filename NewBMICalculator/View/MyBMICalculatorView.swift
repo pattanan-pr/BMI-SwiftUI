@@ -41,7 +41,7 @@ struct MyBMICalculatorView: View {
                             .foregroundColor(Color.white)
                     }
                     .alert(isPresented: $showAlert) { () -> Alert in
-                        return Alert(title: Text("BMICalculator"), message: Text("กรุณากรอกข้อมูลให้ครบถ้วน"), primaryButton: .cancel(Text("ปิดหน้าต่าง")), secondaryButton: .default(Text("เคลียร์ข้อมูล"), action: {
+                        return Alert(title: Text("BMICalculator"), message: Text("Please enter your data"), primaryButton: .cancel(Text("Close Window")), secondaryButton: .default(Text("Clear Data"), action: {
                             self.myWeight = ""
                             self.myHeight = ""
                             self.myBMIResult = ""
@@ -68,7 +68,7 @@ struct MyBMICalculatorView: View {
                 Spacer()
             }
             .padding(.horizontal, 15)
-            .navigationBarTitle("คํานวณค่า BMI")
+            .navigationBarTitle("Calculate")
         }
         .onTapGesture {
             self.hideKeyboard()
@@ -99,19 +99,20 @@ struct MyBMICalculatorView: View {
     }
     //ฟังชันแปลค่า BMI เป็นคําอธิบาย
     private func bmiResultInterpretation(bmiValue : Double) -> String{
-        var result : String = "ค่า BMI = \(bmiValue) \n"
+        var bmi = String(format: "%.1f", bmiValue)
+        var result : String = "BMI = \(bmi) \n"
         if bmiValue >= 40.0 {
-            result += "คุณเป็นโรคอ้วนขึ้นสูงสุด กรุณาพบแพทย์ด่วน"
+            result += "You are extremely obese. Please see a doctor urgently."
         }else if bmiValue >= 35.0 {
-            result += "คุณเป็นโรคอ้วนระดับ 2 คุณเสี่ยงต่อการเกิดโรคที่มากับความอ้วน หากคุณมีเส้นรอบเอวมากกว่าเกณฑ์ปกติคุณจะเสี่ยงต่อการเกิดโรคสูง คุณต้องควบคุมอาหาร และออกกําลังกายอย่างจริงจัง"
+            result += "If you are obese at level 2, you are at risk for the diseases that come with obesity. If you have a waist circumference greater than the norm, you are at high risk of developing the disease. You have to control your diet. and exercise vigorously"
         }else if bmiValue >= 28.5 {
-            result += "คุณเป็นโรคอ้วนระดับ 1 และหากคุณมีเส้นรอบเอวมากกว่า 90 ซม.(ชาย) 80 ซม.(หญิง) คุณจะมีโอกาสเกิดโรคความดัน เบาหวานสูง จําเป็นต้องควบคุมอาหาร และออกกําลังกาย"
+            result += "You are obese level 1 and if you have a waist circumference of more than 90 cm (men) 80 cm (women), you are more likely to develop high blood pressure and diabetes. You need to control your diet. and exercise"
         }else if bmiValue >= 23.5 {
-            result += "น้ําหนักเกิน หากคุณมีกรรมพันธ์เป็นโรคเบาหวานหรือไขมันในเลือดสูงต้องพยายามลดน้ําหนักให้ดัชนีมวลกายต่ํากว่า 23"
+            result += "Overweight If you have a genetic predisposition to diabetes or hyperlipidemia, try to lose weight so that your body mass index is below 23."
         }else if bmiValue >= 18.5{
-            result += "น้ําหนักปกติ และมีปริมาณไขมันอยู่ในเกณฑ์ปกติมักจะไม่ค่อยมีโรคร้าย อุบัติการณ์ของโรคเบาหวาน ความดันโลหิตสูงต่ํากว่าผู้ที่อ้วนกว่านี้"
+            result += "Normal weight and fat content within the normal range are less likely to have a serious disease. incidence of diabetes lower blood pressure than those who are obese"
         }else{
-            result += "น้ําหนักน้อยเกินไป ซึ่งอาจจะเกิดจากนักกีฬาที่ออกกําลังกายมาก และได้รับสารอาหารไม่เพียงพอ วิธีแก้ไขต้องรับประทานอาหารที่มีคุณภาพ และมีปริมาณพลังงานเพียงพอ และออกกําลังกายอย่างเหมาะสม"
+            result += "underweight This may be caused by athletes who exercise a lot. and not getting enough nutrients The solution is to eat quality food. and has sufficient energy and exercise appropriately"
         }
         return result
     }
